@@ -9,17 +9,34 @@ package SpringBoot.FirstSpringBoot;
 //@Entity
 //@Data
 //@Table(name = "Student")
-public class User {
-//    @Id
-//    @Column(name = "name")
-    private String name;
 
-//    @Column(name = "age")
+public class User {
+    private String name;
     private String age;
-    public User(String name, String age){
-        this.name =name;
-        this.age =age;
+
+    // Constructor
+    public User(String name, String age) {
+        this.name = name;
+        this.age = age;
     }
 
+    // Getter for name
+    public String getName() {
+        return name;
+    }
 
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter for age
+    public String getAge() {
+        return age;
+    }
+
+    // Setter for age
+    public void setAge(String age) {
+        this.age = age;
+    }
 }
