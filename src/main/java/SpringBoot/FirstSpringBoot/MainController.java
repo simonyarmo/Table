@@ -14,6 +14,7 @@ import java.util.ArrayList;
 @RequestMapping("/")
 public class MainController {
     ArrayList<User> users = new ArrayList<>();
+    ArrayList<Client> clients = new ArrayList<>();
     @GetMapping
     public String showFriends(Model model){
         Demo x =new Demo();
@@ -21,6 +22,15 @@ public class MainController {
         model.addAttribute("users", users);
         return "printUsers";
     }
+
+
+//    @GetMapping("/login")
+//    public String login(Model model){
+//        ClientController y = new ClientController();
+//        clients = y.getClients();
+//
+//        return "login";
+//    }
 
     @PostMapping("/a")
     public String processName(@RequestParam("name") String name, String age, Model model) {
