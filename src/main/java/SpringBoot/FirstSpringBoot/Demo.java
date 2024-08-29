@@ -8,7 +8,7 @@ public class Demo {
     private ArrayList<User> users = new ArrayList<>();
     public Demo(){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo", "root", "Redcar123!");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/demo", "root", "Redcar123!");
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM USERS");
 
@@ -28,10 +28,6 @@ public class Demo {
 
     public ArrayList<User> getUsers(){
         return users;
-    }
-    public void createTable(){
-
-
     }
 
 }

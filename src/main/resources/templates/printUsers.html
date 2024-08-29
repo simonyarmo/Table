@@ -1,9 +1,77 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        form {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        form div {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+        input[type="text"] {
+            width: calc(100% - 120px);
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+
 <h1>List of Users</h1>
 <table border="1">
     <thead>
@@ -19,20 +87,37 @@
         <td th:text="${user.age}">Age</td>
     </tr>
     </tbody>
-
-    <form action="#" th:action="@{/processName}" method="post">
-        <div>
-            <button type="submit">Add User</button>
-        </div>
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="age">Age:</label>
-            <input type="text" id="age" name="age" required>
-        </div>
-
-    </form>
-
 </table>
+
+<!-- Form to Add User -->
+<form action="#" th:action="@{/a}" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
+    </div>
+    <div>
+        <button type="submit">Add User</button>
+    </div>
+</form>
+
+<!-- Form to Delete User -->
+<form action="#" th:action="@{/d}" method="post">
+    <div>
+        <label for="name2">Name:</label>
+        <input type="text" id="name2" name="name" required>
+    </div>
+    <div>
+        <label for="age2">Age:</label>
+        <input type="text" id="age2" name="age" required>
+    </div>
+    <div>
+        <button type="submit">Delete User</button>
+    </div>
+</form>
+
 </body>
 </html>

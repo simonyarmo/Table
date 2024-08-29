@@ -27,11 +27,11 @@ public class FirstSpringBootApplication {
 //		model.addAttribute("users", users);
 //		return "printUsers";
 //	}
-	@GetMapping("/test")
-	public String test(Model model) {
-		model.addAttribute("message", "Hello, Thymeleaf!");
-		return "test";
-	}
+//	@GetMapping("/test")
+//	public String test(Model model) {
+//		model.addAttribute("message", "Hello, Thymeleaf!");
+//		return "test";
+//	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(FirstSpringBootApplication.class, args);
